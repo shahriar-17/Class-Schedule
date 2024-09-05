@@ -1,0 +1,195 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1d1d;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    position: relative;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    color: #e6b00f;
+}
+
+.days {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.day {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    font-size: 16px; /* Font size */
+}
+
+.day:hover {
+    background-color: #555; /* Slightly lighter grey on hover */
+    color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.day.active {
+    background-color: #e6b00f; /* Yellow color for active button */
+    color: black;
+    font-weight: bold; /* Bold text for active button */
+    transform: scale(1.1); /* Slightly enlarge the active button */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow for active button */
+}
+
+.schedule {
+    display: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #1e1e1e; /* Dark background for the table */
+    border-radius: 8px; /* Rounded corners for the table */
+    overflow: hidden; /* To ensure the rounded corners are visible */
+}
+
+th, td {
+    border: 1px solid #252424; /* Darker border for a subtle look */
+    padding: 12px;
+    text-align: center;
+}
+
+/* Apply different font families for specific columns */
+th, td {
+    font-family: Arial, sans-serif; /* Default font */
+}
+
+th:nth-child(1), td:nth-child(1),
+th:nth-child(2), td:nth-child(2) {
+    font-family: 'Lucida Handwriting', sans-serif; /* Font for the first and second columns */
+}
+
+th:nth-child(3), td:nth-child(3) {
+    font-family: Arial, sans-serif; /* Font for the third column */
+}
+
+/* Ensure Arial is applied to all table headings */
+th {
+    background-color: #383636; /* Darker background for header cells */
+    color: #e6b00f; /* Yellow text for headers to stand out */
+    font-weight: bold; /* Bold text for headers */
+    font-family: Arial, sans-serif; /* Explicitly set Arial font for headings */
+}
+
+td {
+    background-color: #ffffff; /* White background for data cells */
+    color: #000000; /* Black text for readability */
+    font-weight: bold; /* Bold text for data cells */
+}
+
+/* Set widths for columns */
+th:nth-child(1), td:nth-child(1) {
+    width: 15%; /* Narrower width for the first column */
+}
+
+th:nth-child(2), td:nth-child(2) {
+    width: 25%; /* Narrower width for the second column */
+}
+
+th:nth-child(3), td:nth-child(3) {
+    width: 60%; /* Wider width for the third column */
+}
+
+tr:hover td {
+    background-color: #565454; /* Light grey highlight on row hover */
+    color: #000000; /* Black text on hover */
+}
+
+th:first-child, td:first-child {
+    border-left: none; /* Remove left border for the first column */
+}
+
+th:last-child, td:last-child {
+    border-right: none; /* Remove right border for the last column */
+}
+
+/* Styles for editable cells */
+.course-input {
+    background-color: #f0f0f0; /* Light background for editable cells */
+    color: #000000; /* Black text for readability */
+    border: 1px solid #ccc; /* Light border to differentiate */
+    border-radius: 4px; /* Rounded corners for input cells */
+    padding: 8px; /* Padding inside editable cells */
+}
+
+/* Save button styles */
+#save-btn {
+    background-color: #e6b00f;
+    color: rgb(3, 3, 3);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    font-weight: bold;
+}
+
+#save-btn:hover {
+    background-color: #d4a90b; /* Darker yellow on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+#course-names-dropdown {
+    background-color: #e6b00f;
+    color: rgb(3, 3, 3);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+#course-names-dropdown:hover {
+    background-color: #d4a90b;
+    transform: scale(1.05);
+}
+
+/* Clear button styles */
+#clear-btn {
+    background-color: #e6b00f;
+    color: rgb(3, 3, 3);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-right: 10px; /* Add space between Clear button and dropdown menu */
+}
+
+#clear-btn:hover {
+    background-color: #d4a90b; /* Darker yellow on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+/* Today's date style */
+.current-date {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 18px;
+    color: white;
+}

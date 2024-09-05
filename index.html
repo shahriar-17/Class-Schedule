@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Class Schedule</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Today's date displayed in the top-right corner -->
+        <div class="current-date" id="current-date"></div>
+
+        <h1>Class Schedule</h1>
+        <div class="days">
+            <button class="day" onclick="showSchedule('sat')">Sat</button>
+            <button class="day" onclick="showSchedule('sun')">Sun</button>
+            <button class="day" onclick="showSchedule('mon')">Mon</button>
+            <button class="day" onclick="showSchedule('tue')">Tues</button>
+            <button class="day" onclick="showSchedule('wed')">Wed</button>
+            <button class="day" onclick="showSchedule('thu')">Thurs</button>
+            <button class="day" onclick="showSchedule('fri')">Fri</button>
+        </div>
+
+        <!-- Schedule for Tuesday -->
+        <div class="schedule" id="tue">
+            <h2>Tuesday</h2>
+            <table>
+                <tr>
+                    <th>Time</th>
+                    <th>Course</th>
+                    <th>Short Notes</th>
+                </tr>
+                <tr>
+                    <td>8-9 AM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="empty_1"></td>
+                </tr>
+                <tr>
+                    <td>9-10 AM</td>
+                    <td>
+                        <p>CSE 301</p>
+                        <p>SAH, MDAA</p>
+                    </td>
+                    <td contenteditable="true" class="course-input" id="cse301"></td>
+                </tr>
+                <tr>
+                    <td>10-11 AM</td>
+                    <td>
+                        <p>CSE 313</p>
+                        <p>RRR, KRV</p>
+                    </td>
+                    <td contenteditable="true" class="course-input" id="cse313"></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">11-1 PM</td>
+                    <td rowspan="2">
+                        <p>CSE 318</p>
+                        <p>CL</p>
+                        <p>MMI, SB</p>
+                    </td>
+                    <td contenteditable="true" class="course-input" id="cse318_1"></td>
+                </tr>
+                <tr>
+                    <td contenteditable="true" class="course-input" id="cse318_2"></td>
+                </tr>
+                <tr>
+                    <td>1-2 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="cse318_3"></td>
+                </tr>
+                <tr>
+                    <td rowspan="3">2-5 PM</td>
+                    <td rowspan="3"></td>
+                    <td contenteditable="true" class="course-input" id="empty_2"></td>
+                </tr>
+                <tr>
+                    <td contenteditable="true" class="course-input" id="empty_3"></td>
+                </tr>
+                <tr>
+                    <td contenteditable="true" class="course-input" id="empty_4"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Schedule for Saturday -->
+        <div class="schedule" id="sat">
+            <h2>Saturday</h2>
+            <table>
+                <tr>
+                    <th>Time</th>
+                    <th>Course</th>
+                    <th>Short Notes</th>
+                </tr>
+                <tr>
+                    <td>8-9 AM</td>
+                    <td>CT</td>
+                    <td contenteditable="true" class="course-input" id="ct"></td>
+                </tr>
+                <tr>
+                    <td>9-10 AM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="empty_5"></td>
+                </tr>
+                <tr>
+                    <td>10-11 AM</td>
+                    <td>
+                        <p>CSE 301</p>
+                        <p>SAH, MDAA</p>
+                    </td>
+                    <td contenteditable="true" class="course-input" id="cse301_sat"></td>
+                </tr>
+                <tr>
+                    <td>11-12 PM</td>
+                    <td>
+                        <p>CSE 317</p>
+                        <p>MMI, SB</p>
+                    </td>
+                    <td contenteditable="true" class="course-input" id="cse317"></td>
+                </tr>
+                <tr>
+                    <td>12-1 PM</td>
+                    <td>
+                        <p>CSE 325</p>
+                        <p>AI, JYK</p>
+                    </td>
+                    <td contenteditable="true" class="course-input" id="cse325"></td>
+                </tr>
+                <tr>
+                    <td>1-2 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="empty_6"></td>
+                </tr>
+                <tr>
+                    <td rowspan="3">2-5 PM</td>
+                    <td rowspan="3">
+                        <p>CSE 322</p>
+                        <p>WNL</p>
+                        <p>SAH</p>
+                    </td>
+                    <td contenteditable="true" class="course-input" id="cse322_1"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Schedule for Sunday -->
+        <div class="schedule" id="sun">
+            <h2>Sunday</h2>
+            <table>
+                <tr>
+                    <th>Time</th>
+                    <th>Course</th>
+                    <th>Short Notes</th>
+                </tr>
+                <tr>
+                    <td>8-9 AM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="empty_sun_1"></td>
+                </tr>
+                <tr>
+                    <td>9-10 AM</td>
+                    <td>
+                        <p>CSE 321</p>
+                        <p>MSH, SB</p>
+                    </td>
+                    <td contenteditable="true" class="course-input" id="cse321_sun"></td>
+                </tr>
+                <tr>
+                    <td>10-11 AM</td>
+                    <td>
+                        <p>CSE 317</p>
+                        <p>MMI, SB</p>
+                    </td>
+                    <td contenteditable="true" class="course-input" id="cse317_sun"></td>
+                </tr>
+                <tr>
+                    <td>11-12 PM</td>
+                    <td>
+                        <p>CSE 313</p>
+                        <p>RRR, KRV</p>
+                    </td>
+                    <td contenteditable="true" class="course-input" id="cse313_sun"></td>
+                </tr>
+                <tr>
+                    <td>12-1 PM</td>
+                    <td>
+                        <p>CSE 325</p>
+                        <p>AI, JYK</p>
+                    </td>
+                    <td contenteditable="true" class="course-input" id="cse325_sun"></td>
+                </tr>
+                <tr>
+                    <td>1-2 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="empty_sun_2"></td>
+                </tr>
+                <tr>
+                    <td rowspan="3">2-5 PM</td>
+                    <td rowspan="3"></td>
+                    <td contenteditable="true" class="course-input" id="empty_sun_3"></td>
+                </tr>
+                <tr>
+                    <td contenteditable="true" class="course-input" id="empty_sun_4"></td>
+                </tr>
+                <tr>
+                    <td contenteditable="true" class="course-input" id="empty_sun_5"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Schedule for Monday -->
+        <div class="schedule" id="mon">
+            <h2>Monday</h2>
+            <table>
+                <tr>
+                    <th>Time</th>
+                    <th>Course</th>
+                    <th>Short Notes</th>
+                </tr>
+                <tr>
+                    <td>8-9 AM</td>
+                    <td>CT</td>
+                    <td contenteditable="true" class="course-input" id="ct_mon"></td>
+                </tr>
+                <tr>
+                    <td>9-10 AM</td>
+                    <td>
+                        <p>CSE 317</p>
+                        <p>MMI, SB</p>
+                    </td>
+                    <td contenteditable="true" class="course-input" id="cse317_mon"></td>
+                </tr>
+                <tr>
+                    <td>10-11 AM</td>
+                    <td>
+                        <p>CSE 321</p>
+                        <p>MSH, AAI</p>
+                    </td>
+                    <td contenteditable="true" class="course-input" id="cse321_mon"></td>
+                </tr>
+                <tr>
+                    <td>11-12 PM</td>
+                    <td>
+                        <p>CSE 325</p>
+                        <p>AI, JYK</p>
+                    </td>
+                    <td contenteditable="true" class="course-input" id="cse325_mon"></td>
+                </tr>
+                <tr>
+                    <td>12-1 PM</td>
+                    <td>
+                        <p>CSE 313</p>
+                        <p>RRR, KRV</p>
+                    </td>
+                    <td contenteditable="true" class="course-input" id="cse313_mon"></td>
+                </tr>
+                <tr>
+                    <td>1-2 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="empty_mon"></td>
+                </tr>
+                <tr>
+                    <td rowspan="3">2-5 PM</td>
+                    <td rowspan="3"></td>
+                    <td contenteditable="true" class="course-input" id="empty_mon_2"></td>
+                </tr>
+                <tr>
+                    <td contenteditable="true" class="course-input" id="empty_mon_3"></td>
+                </tr>
+                <tr>
+                    <td contenteditable="true" class="course-input" id="empty_mon_4"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Schedule for Wednesday -->
+        <div class="schedule" id="wed">
+            <h2>Wednesday</h2>
+            <table>
+                <tr>
+                    <th>Time</th>
+                    <th>Course</th>
+                    <th>Short Notes</th>
+                </tr>
+                <tr>
+                    <td>8-9 AM</td>
+                    <td>CT</td>
+                    <td contenteditable="true" class="course-input" id="ct_wed"></td>
+                </tr>
+                <tr>
+                    <td>9-10 AM</td>
+                    <td>
+                        <p>CSE 321</p>
+                        <p>MSH, AAI</p>
+                    </td>
+                    <td contenteditable="true" class="course-input" id="cse321_wed"></td>
+                </tr>
+                <tr>
+                    <td>10-11 AM</td>
+                    <td>
+                        <p>CSE 301</p>
+                        <p>SAH, MDAA</p>
+                    </td>
+                    <td contenteditable="true" class="course-input" id="cse301_wed"></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">11-1 PM</td>
+                    <td rowspan="2">
+                        <p>CSE 326</p>
+                        <p>DBL</p>
+                        <p>AI, JYK</p>
+                    </td>
+                    <td contenteditable="true" class="course-input" id="cse326_1"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>1-2 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="cse326_2"></td>
+                </tr>
+                <tr>
+                    <td rowspan="3">2-5 PM</td>
+                    <td rowspan="3">
+                        <p>CSE 314</p>
+                        <p>IAC</p>
+                        <p>RRR, MTH, KRV</p>
+                    </td>
+                    <td contenteditable="true" class="course-input" id="cse314_1"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Schedule for Thursday -->
+        <div class="schedule" id="thu">
+            <h2>Thursday</h2>
+            <table>
+                <tr>
+                    <th>Time</th>
+                    <th></th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>8-9 AM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="thu_8_9"></td>
+                </tr>
+                <tr>
+                    <td>9-10 AM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="thu_9_10"></td>
+                </tr>
+                <tr>
+                    <td>10-11 AM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="thu_10_11"></td>
+                </tr>
+                <tr>
+                    <td>11-12 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="thu_11_12"></td>
+                </tr>
+                <tr>
+                    <td>12-1 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="thu_12_1"></td>
+                </tr>
+                <tr>
+                    <td>1-2 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="thu_1_2"></td>
+                </tr>
+                <tr>
+                    <td>2-3 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="thu_2_3"></td>
+                </tr>
+                <tr>
+                    <td>3-4 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="thu_3_4"></td>
+                </tr>
+                <tr>
+                    <td>4-5 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="thu_4_5"></td>
+                </tr>
+                <tr>
+                    <td>5-6 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="thu_5_6"></td>
+                </tr>
+                <tr>
+                    <td>6-7 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="thu_6_7"></td>
+                </tr>
+                <tr>
+                    <td>7-8 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="thu_7_8"></td>
+                </tr>
+                <tr>
+                    <td>8-9 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="thu_8_9_pm"></td>
+                </tr>
+                <tr>
+                    <td>9-10 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="thu_9_10_pm"></td>
+                </tr>
+                <tr>
+                    <td>10-11 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="thu_10_11_pm"></td>
+                </tr>
+                <tr>
+                    <td>11-12 AM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="thu_11_12_am"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Schedule for Friday -->
+        <div class="schedule" id="fri">
+            <h2>Friday</h2>
+            <table>
+                <tr>
+                    <th>Time</th>
+                    <th></th>
+                    <th>Notes</th>
+                </tr>
+                <tr>
+                    <td>8-9 AM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="fri_8_9"></td>
+                </tr>
+                <tr>
+                    <td>9-10 AM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="fri_9_10"></td>
+                </tr>
+                <tr>
+                    <td>10-11 AM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="fri_10_11"></td>
+                </tr>
+                <tr>
+                    <td>11-12 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="fri_11_12"></td>
+                </tr>
+                <tr>
+                    <td>12-1 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="fri_12_1"></td>
+                </tr>
+                <tr>
+                    <td>1-2 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="fri_1_2"></td>
+                </tr>
+                <tr>
+                    <td>2-3 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="fri_2_3"></td>
+                </tr>
+                <tr>
+                    <td>3-4 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="fri_3_4"></td>
+                </tr>
+                <tr>
+                    <td>4-5 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="fri_4_5"></td>
+                </tr>
+                <tr>
+                    <td>5-6 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="fri_5_6"></td>
+                </tr>
+                <tr>
+                    <td>6-7 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="fri_6_7"></td>
+                </tr>
+                <tr>
+                    <td>7-8 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="fri_7_8"></td>
+                </tr>
+                <tr>
+                    <td>8-9 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="fri_8_9_pm"></td>
+                </tr>
+                <tr>
+                    <td>9-10 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="fri_9_10_pm"></td>
+                </tr>
+                <tr>
+                    <td>10-11 PM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="fri_10_11_pm"></td>
+                </tr>
+                <tr>
+                    <td>11-12 AM</td>
+                    <td></td>
+                    <td contenteditable="true" class="course-input" id="fri_11_12_am"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; align-items: center;">
+            <button id="clear-btn"
+                style="background-color: #e6b00f; color: rgb(3, 3, 3); padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 16px; transition: background-color 0.3s, transform 0.3s;">
+                Clear
+            </button>
+            <select id="course-names-dropdown"
+                style="background-color: #e6b00f; color: rgb(3, 3, 3); padding: 10px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 16px;">
+                <option value="courses">Course Names</option>
+                <option value="cse301">CSE301: Mathematical Analysis for Computer Science</option>
+                <option value="cse313">CSE313: Operating System</option>
+                <option value="cse314">CSE314: Operating System Sessional</option>
+                <option value="cse317">CSE317: Artificial Intelligence</option>
+                <option value="cse318">CSE318: Artificial Intelligence Sessional</option>
+                <option value="cse321">CSE321: Computer Networks</option>
+                <option value="cse322">CSE322: Computer Networks Sessional</option>
+                <option value="cse325">CSE325: Information System Design</option>
+                <option value="cse326">CSE326: Information System Design Sessional</option>
+            </select>
+            <button id="save-btn"
+                style="margin-left: 10px; background-color: #e6b00f; color: rgb(3, 3, 3); padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 16px; transition: background-color 0.3s, transform 0.3s;">
+                Save
+            </button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
